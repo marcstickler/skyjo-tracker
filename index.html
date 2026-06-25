@@ -292,13 +292,17 @@ function updateBadge(){
 
 function checkPaywall(){
   if(isPaid() || gamesLeft()>0) return true;
-  if(sessionStorage.getItem('skyjo_skip')==='1') return true;
+  const skipUntil = parseInt(localStorage.getItem('skyjo_skip_until')||'0');
+  if(Date.now() < skipUntil) return true;
   document.getElementById('pw').classList.remove('hidden');
   return false;
 }
 function closePw(skip){
   document.getElementById('pw').classList.add('hidden');
-  if(skip) sessionStorage.setItem('skyjo_skip','1');
+  if(skip){
+    // 7-Tage-Schonfrist
+    localStorage.setItem('skyjo_skip_until', (Date.now() + 7*24*60*60*1000).toString());
+  }
 }
 
 function payWith(m){
