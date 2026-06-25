@@ -92,7 +92,7 @@ tr:last-child td{border-bottom:none}
 
 /* paywall */
 .pw-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:flex-end;justify-content:center;z-index:100;padding:0 12px 12px}
-.pw-sheet{background:var(--bg);border-radius:24px 24px 18px 18px;padding:22px 20px 20px;width:100%;max-width:480px;text-align:center}
+.pw-sheet{background:var(--bg);border-radius:24px 24px 18px 18px;padding:22px 20px 20px;width:100%;max-width:480px;text-align:center;overflow-y:auto;max-height:88dvh}
 .pw-icon{font-size:44px;margin-bottom:6px}
 .pw-title{font-size:19px;font-weight:700;margin-bottom:5px}
 .pw-sub{font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.5}
@@ -133,7 +133,7 @@ tr:last-child td{border-bottom:none}
       <button onclick="checkCode()" class="primary" style="white-space:nowrap">Aktivieren</button>
     </div>
     <div class="code-hint">Hast du einen Code? Hier eingeben.</div>
-    <button onclick="closePw()" style="background:none;border:none;color:var(--text2);font-size:13px;padding:10px;margin-top:4px;">Vielleicht später</button>
+    <button onclick="closePw(true)" style="background:none;border:none;color:var(--text2);font-size:13px;padding:10px;margin-top:4px;">Vielleicht später</button>
   </div>
 </div>
 
@@ -292,10 +292,14 @@ function updateBadge(){
 
 function checkPaywall(){
   if(isPaid() || gamesLeft()>0) return true;
+  if(sessionStorage.getItem('skyjo_skip')==='1') return true;
   document.getElementById('pw').classList.remove('hidden');
   return false;
 }
-function closePw(){ document.getElementById('pw').classList.add('hidden') }
+function closePw(skip){
+  document.getElementById('pw').classList.add('hidden');
+  if(skip) sessionStorage.setItem('skyjo_skip','1');
+}
 
 function payWith(m){
   const url = m==='stripe'
