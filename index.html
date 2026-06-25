@@ -9,43 +9,79 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.0.0/dist/tabler-icons.min.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#fff;--bg2:#f5f5f5;--bg3:#e8e8e8;--text:#1a1a1a;--text2:#666;--border:rgba(0,0,0,.12);--border2:rgba(0,0,0,.25);--success:#0f6e56;--success-bg:#e1f5ee;--danger:#993c1d;--danger-bg:#faece7;--accent:#7F77DD;--radius:14px;--radius-sm:9px}
-@media(prefers-color-scheme:dark){:root{--bg:#1c1c1e;--bg2:#2c2c2e;--bg3:#3a3a3c;--text:#f2f2f7;--text2:#aeaeb2;--border:rgba(255,255,255,.1);--border2:rgba(255,255,255,.22);--success:#5DCAA5;--success-bg:#04342c;--danger:#F0997B;--danger-bg:#4A1B0C;--accent:#AFA9EC}}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100dvh;padding:0 16px 40px;max-width:480px;margin:0 auto}
-.hero{width:calc(100% + 32px);margin-left:-16px;background:linear-gradient(160deg,#3C3489 0%,#7F77DD 60%,#AFA9EC 100%);padding:28px 20px 22px;margin-bottom:20px;border-radius:0 0 24px 24px;display:flex;align-items:center;gap:16px}
-.hero-text h1{font-size:26px;font-weight:700;color:#fff;letter-spacing:-.5px}
+:root{--bg:#fff;--bg2:#f5f5f5;--bg3:#e8e8e8;--text:#1a1a1a;--text2:#666;--border:rgba(0,0,0,.12);--border2:rgba(0,0,0,.25);--success:#0f6e56;--danger:#993c1d;--accent:#7F77DD;--radius:14px;--rsm:9px}
+@media(prefers-color-scheme:dark){:root{--bg:#1c1c1e;--bg2:#2c2c2e;--bg3:#3a3a3c;--text:#f2f2f7;--text2:#aeaeb2;--border:rgba(255,255,255,.1);--border2:rgba(255,255,255,.22);--success:#5DCAA5;--danger:#F0997B;--accent:#AFA9EC}}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100dvh;padding:0 16px 48px;max-width:480px;margin:0 auto}
+
+/* hero */
+.hero{width:calc(100% + 32px);margin-left:-16px;background:linear-gradient(160deg,#3C3489 0%,#7F77DD 60%,#AFA9EC 100%);padding:24px 20px 20px;margin-bottom:18px;border-radius:0 0 24px 24px;display:flex;align-items:center;gap:14px}
+.hero-text h1{font-size:24px;font-weight:700;color:#fff;letter-spacing:-.5px}
 .hero-text p{font-size:13px;color:rgba(255,255,255,.75);margin-top:2px}
-.free-badge{display:inline-block;margin-top:8px;background:rgba(255,255,255,.2);color:#fff;font-size:11px;padding:3px 10px;border-radius:20px}
-.card{background:var(--bg);border:.5px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:12px}
-.card-title{font-size:15px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-input[type=text],input[type=number],select{background:var(--bg2);border:.5px solid var(--border);border-radius:var(--radius-sm);color:var(--text);font-size:16px;padding:10px 12px;outline:none;width:100%;-webkit-appearance:none}
+.badge{display:inline-block;margin-top:6px;background:rgba(255,255,255,.2);color:#fff;font-size:11px;padding:3px 10px;border-radius:20px}
+.badge.premium{background:rgba(93,202,165,.35)}
+
+/* card */
+.card{background:var(--bg);border:.5px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px}
+.card-title{font-size:14px;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:7px;color:var(--text)}
+
+/* inputs */
+input[type=text],input[type=number],select{background:var(--bg2);border:.5px solid var(--border);border-radius:var(--rsm);color:var(--text);font-size:16px;padding:10px 12px;outline:none;width:100%;-webkit-appearance:none}
 input[type=text]:focus,input[type=number]:focus,select:focus{border-color:var(--border2)}
 input[type=number]{width:72px;text-align:center}
-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
-button{background:var(--bg2);border:.5px solid var(--border2);border-radius:var(--radius-sm);color:var(--text);font-size:15px;padding:11px 16px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;-webkit-tap-highlight-color:transparent;transition:background .1s}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+
+/* buttons */
+button{background:var(--bg2);border:.5px solid var(--border2);border-radius:var(--rsm);color:var(--text);font-size:15px;padding:10px 16px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;-webkit-tap-highlight-color:transparent;transition:background .1s}
 button:active{background:var(--bg3)}
 button.primary{background:#3C3489;color:#fff;border-color:#3C3489}
 button.primary:active{opacity:.85}
 button.full{width:100%}
-button.danger{color:var(--danger)}
+button.danger{color:var(--danger);border-color:transparent;background:none}
 button.stripe{background:#635BFF;color:#fff;border-color:#635BFF}
 button.paypal{background:#003087;color:#fff;border-color:#003087}
 button.stripe:active,button.paypal:active{opacity:.85}
+
+/* mode toggle */
+.mode-toggle{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.mode-btn{background:var(--bg2);border:.5px solid var(--border2);border-radius:var(--rsm);padding:10px 8px;cursor:pointer;text-align:center;transition:all .15s;-webkit-tap-highlight-color:transparent}
+.mode-btn.active{background:#3C3489;border-color:#3C3489;color:#fff}
+.mode-btn .mode-icon{font-size:20px;margin-bottom:4px}
+.mode-btn .mode-label{font-size:13px;font-weight:600;display:block}
+.mode-btn .mode-sub{font-size:11px;opacity:.75;display:block}
+
+/* limit buttons */
+.limit-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.pill{background:var(--bg2);border:.5px solid var(--border2);border-radius:20px;padding:5px 12px;font-size:13px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:all .15s}
+.pill.active{background:#3C3489;color:#fff;border-color:#3C3489}
+.custom-limit-row{display:flex;align-items:center;gap:8px;margin-top:8px}
+
+/* player */
 .avatar{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0}
-.avatar-lg{width:38px;height:38px;font-size:13px}
+.avatar-lg{width:36px;height:36px;font-size:12px}
 .player-chip{display:inline-flex;align-items:center;gap:6px;background:var(--bg2);border-radius:20px;padding:5px 10px 5px 6px;margin:3px}
 .chip-name{font-size:13px}
-.chip-remove{background:none;border:none;padding:0 2px;font-size:18px;color:var(--text2);cursor:pointer;line-height:1}
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:10px;margin-bottom:12px}
-.stat-card{background:var(--bg2);border-radius:var(--radius-sm);padding:10px;text-align:center}
-.stat-val{font-size:24px;font-weight:600}
-.stat-label{font-size:11px;color:var(--text2);margin-top:2px}
+.chip-rm{background:none;border:none;padding:0 2px;font-size:16px;color:var(--text2);cursor:pointer;line-height:1}
+
+/* stat grid */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px;margin-bottom:12px}
+.stat-card{background:var(--bg2);border-radius:var(--rsm);padding:10px 8px;text-align:center}
+.stat-val{font-size:22px;font-weight:600}
+.stat-label{font-size:11px;color:var(--text2);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stat-sub{font-size:10px;color:var(--text2);margin-top:1px}
+
+/* progress bar */
+.progress-wrap{background:var(--bg2);border-radius:4px;height:4px;margin-top:4px;overflow:hidden}
+.progress-bar{height:4px;border-radius:4px;transition:width .4s ease}
+
+/* round inputs */
 .round-input-row{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:.5px solid var(--border)}
 .round-input-row:last-child{border-bottom:none}
 .input-row{display:flex;gap:8px;align-items:center}
+
+/* table */
 table{width:100%;border-collapse:collapse;font-size:13px}
-th{padding:8px 6px;font-weight:500;color:var(--text2);border-bottom:.5px solid var(--border);text-align:center}
-td{padding:7px 4px;border-bottom:.5px solid var(--border);text-align:center}
+th{padding:7px 5px;font-weight:500;color:var(--text2);border-bottom:.5px solid var(--border);text-align:center}
+td{padding:6px 4px;border-bottom:.5px solid var(--border);text-align:center}
 tr:last-child td{border-bottom:none}
 .total-row td{font-weight:600;background:var(--bg2)}
 .doubled{color:var(--danger);font-weight:600}
@@ -53,255 +89,424 @@ tr:last-child td{border-bottom:none}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .result-rank{font-size:20px;min-width:28px;text-align:center}
 .hidden{display:none}
-.paywall-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:flex-end;justify-content:center;z-index:100;padding:0 12px 12px}
-.paywall-sheet{background:var(--bg);border-radius:24px 24px 18px 18px;padding:24px 20px 20px;width:100%;max-width:480px;text-align:center}
-.paywall-icon{font-size:48px;margin-bottom:8px}
-.paywall-title{font-size:20px;font-weight:700;margin-bottom:6px}
-.paywall-sub{font-size:14px;color:var(--text2);margin-bottom:20px;line-height:1.5}
-.price-tag{font-size:28px;font-weight:700;color:var(--accent)}
-.price-sub{font-size:12px;color:var(--text2);margin-bottom:20px}
-.pay-buttons{display:flex;flex-direction:column;gap:10px}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:10px 18px;border-radius:20px;font-size:13px;white-space:nowrap;opacity:0;transition:opacity .3s;pointer-events:none;z-index:999}
+
+/* paywall */
+.pw-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:flex-end;justify-content:center;z-index:100;padding:0 12px 12px}
+.pw-sheet{background:var(--bg);border-radius:24px 24px 18px 18px;padding:22px 20px 20px;width:100%;max-width:480px;text-align:center}
+.pw-icon{font-size:44px;margin-bottom:6px}
+.pw-title{font-size:19px;font-weight:700;margin-bottom:5px}
+.pw-sub{font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.5}
+.price-tag{font-size:26px;font-weight:700;color:var(--accent)}
+.price-sub{font-size:11px;color:var(--text2);margin-bottom:16px}
+.pay-btns{display:flex;flex-direction:column;gap:8px}
+.code-row{display:flex;gap:8px;margin-top:12px}
+.code-row input{flex:1;font-size:14px;padding:9px 12px}
+.code-hint{font-size:12px;color:var(--text2);margin-top:6px}
+
+/* toast */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:9px 18px;border-radius:20px;font-size:13px;white-space:nowrap;opacity:0;transition:opacity .3s;pointer-events:none;z-index:999;max-width:90vw;text-align:center;white-space:normal}
 @media(prefers-color-scheme:dark){.toast{background:#f2f2f7;color:#1c1c1e}}
 .toast.show{opacity:1}
 </style>
 </head>
 <body>
-
 <div id="toast" class="toast"></div>
 
-<div id="paywall-overlay" class="paywall-overlay hidden">
-  <div class="paywall-sheet">
-    <div class="paywall-icon">🃏</div>
-    <div class="paywall-title">Deine 5 Gratisspiele sind vorbei</div>
-    <div class="paywall-sub">Schalte Skyjo Tracker frei und tracke unbegrenzt viele Spiele – für weniger als ein Kaffee im Monat.</div>
-    <div class="price-tag">€ 1,99</div>
+<!-- ═══════════ PAYWALL ═══════════ -->
+<div id="pw" class="pw-overlay hidden">
+  <div class="pw-sheet">
+    <div class="pw-icon">🃏</div>
+    <div class="pw-title">10 Gratisspiele vorbei</div>
+    <div class="pw-sub">Schalte Skyjo Tracker Premium frei – beide Spielmodi, unbegrenzte Spiele.</div>
+    <div class="price-tag">€ 0,99</div>
     <div class="price-sub">pro Monat · jederzeit kündbar</div>
-    <div class="pay-buttons">
+    <div class="pay-btns">
       <button class="stripe full" onclick="payWith('stripe')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
-        Mit Karte bezahlen (Stripe)
+        <i class="ti ti-credit-card"></i> Mit Karte bezahlen (Stripe)
       </button>
       <button class="paypal full" onclick="payWith('paypal')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
-        Mit PayPal bezahlen
+        <i class="ti ti-brand-paypal"></i> Mit PayPal bezahlen
       </button>
-      <button onclick="closePaywall()" style="background:none;border:none;color:var(--text2);font-size:13px;padding:8px;">Vielleicht später</button>
     </div>
+    <div class="code-row">
+      <input type="text" id="code-input" placeholder="Aktivierungscode eingeben..." autocomplete="off" autocapitalize="none"/>
+      <button onclick="checkCode()" class="primary" style="white-space:nowrap">Aktivieren</button>
+    </div>
+    <div class="code-hint">Hast du einen Code? Hier eingeben.</div>
+    <button onclick="closePw()" style="background:none;border:none;color:var(--text2);font-size:13px;padding:10px;margin-top:4px;">Vielleicht später</button>
   </div>
 </div>
 
+<!-- ═══════════ SETUP ═══════════ -->
 <div id="setup-view">
   <div class="hero">
-    <svg width="68" height="76" viewBox="0 0 68 76" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="0" y="10" width="40" height="56" rx="6" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
-      <text x="20" y="42" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="17" font-weight="700" font-family="system-ui">-2</text>
-      <rect x="18" y="4" width="42" height="58" rx="6" fill="rgba(255,255,255,0.95)"/>
-      <rect x="22" y="8" width="34" height="50" rx="4" fill="rgba(127,119,221,0.1)"/>
-      <text x="39" y="33" text-anchor="middle" fill="#3C3489" font-size="21" font-weight="800" font-family="system-ui">7</text>
-      <circle cx="39" cy="48" r="5" fill="#7F77DD" opacity="0.55"/>
-      <text x="24" y="18" fill="#7F77DD" font-size="9" font-weight="700" font-family="system-ui">7</text>
-      <text x="52" y="60" fill="#7F77DD" font-size="9" font-weight="700" font-family="system-ui" text-anchor="end">7</text>
+    <svg width="64" height="72" viewBox="0 0 64 72" fill="none" aria-hidden="true">
+      <rect x="0" y="9" width="38" height="54" rx="6" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.35)" stroke-width="1"/>
+      <text x="19" y="40" text-anchor="middle" fill="rgba(255,255,255,.45)" font-size="16" font-weight="700" font-family="system-ui">-2</text>
+      <rect x="17" y="3" width="40" height="56" rx="6" fill="rgba(255,255,255,.95)"/>
+      <rect x="21" y="7" width="32" height="48" rx="4" fill="rgba(127,119,221,.1)"/>
+      <text x="37" y="32" text-anchor="middle" fill="#3C3489" font-size="20" font-weight="800" font-family="system-ui">7</text>
+      <circle cx="37" cy="46" r="5" fill="#7F77DD" opacity=".55"/>
+      <text x="23" y="17" fill="#7F77DD" font-size="9" font-weight="700" font-family="system-ui">7</text>
     </svg>
     <div class="hero-text">
       <h1>Skyjo Tracker</h1>
       <p>Punkte erfassen, nie mehr vergessen</p>
-      <span class="free-badge" id="games-badge">5 Spiele noch frei</span>
+      <span class="badge" id="top-badge">10 Spiele noch frei</span>
     </div>
   </div>
+
+  <!-- Spielmodus -->
+  <div class="card">
+    <div class="card-title"><i class="ti ti-settings-2" aria-hidden="true"></i> Spielmodus</div>
+    <div class="mode-toggle">
+      <div class="mode-btn active" id="mode-classic" onclick="setMode('classic')">
+        <div class="mode-icon">📈</div>
+        <span class="mode-label">Classic</span>
+        <span class="mode-sub">0 aufwärts</span>
+      </div>
+      <div class="mode-btn" id="mode-countdown" onclick="setMode('countdown')">
+        <div class="mode-icon">📉</div>
+        <span class="mode-label">Countdown</span>
+        <span class="mode-sub">100 auf 0</span>
+      </div>
+    </div>
+    <div id="limit-section">
+      <p style="font-size:13px;color:var(--text2);margin-bottom:6px;" id="limit-label">Spiel endet bei:</p>
+      <div class="limit-pills">
+        <span class="pill active" data-val="100" onclick="setPill(this,100)">100</span>
+        <span class="pill" data-val="200" onclick="setPill(this,200)">200</span>
+        <span class="pill" data-val="300" onclick="setPill(this,300)">300</span>
+        <span class="pill" data-val="1000" onclick="setPill(this,1000)">1000</span>
+        <span class="pill" data-val="custom" onclick="setPill(this,'custom')">Eigener</span>
+      </div>
+      <div class="custom-limit-row hidden" id="custom-limit-row">
+        <input type="number" id="custom-limit-input" placeholder="z.B. 500" min="10" max="99999" style="width:100px"/>
+        <span style="font-size:13px;color:var(--text2)">Punkte</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Spieler -->
   <div class="card">
     <div class="card-title"><i class="ti ti-users" aria-hidden="true"></i> Spieler</div>
-    <div class="input-row" style="margin-bottom:10px;">
-      <input type="text" id="player-name-input" placeholder="Name..." maxlength="20" style="flex:1;"/>
+    <div class="input-row" style="margin-bottom:10px">
+      <input type="text" id="player-name-input" placeholder="Name..." maxlength="20" style="flex:1"/>
       <button onclick="addPlayer()"><i class="ti ti-plus" aria-hidden="true"></i></button>
     </div>
     <div id="player-list"></div>
   </div>
+
   <button class="full primary" onclick="startGame()" id="start-btn" disabled>
     <i class="ti ti-player-play" aria-hidden="true"></i> Spiel starten
   </button>
 </div>
 
+<!-- ═══════════ GAME ═══════════ -->
 <div id="game-view" class="hidden">
   <div class="hero">
-    <svg width="68" height="76" viewBox="0 0 68 76" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="0" y="10" width="40" height="56" rx="6" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
-      <text x="20" y="42" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="17" font-weight="700" font-family="system-ui">-2</text>
-      <rect x="18" y="4" width="42" height="58" rx="6" fill="rgba(255,255,255,0.95)"/>
-      <rect x="22" y="8" width="34" height="50" rx="4" fill="rgba(216,90,48,0.1)"/>
-      <text x="39" y="33" text-anchor="middle" fill="#993c1d" font-size="21" font-weight="800" font-family="system-ui">12</text>
-      <circle cx="39" cy="48" r="5" fill="#D85A30" opacity="0.6"/>
+    <svg width="64" height="72" viewBox="0 0 64 72" fill="none" aria-hidden="true">
+      <rect x="0" y="9" width="38" height="54" rx="6" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.35)" stroke-width="1"/>
+      <rect x="17" y="3" width="40" height="56" rx="6" fill="rgba(255,255,255,.95)"/>
+      <rect x="21" y="7" width="32" height="48" rx="4" fill="rgba(216,90,48,.1)"/>
+      <text x="37" y="32" text-anchor="middle" fill="#993c1d" font-size="20" font-weight="800" font-family="system-ui">12</text>
+      <circle cx="37" cy="46" r="5" fill="#D85A30" opacity=".6"/>
     </svg>
     <div class="hero-text">
       <h1>Skyjo Tracker</h1>
-      <p id="game-round-info">Runde 1</p>
+      <p id="game-info">Runde 1</p>
     </div>
   </div>
+
   <div class="stat-grid" id="stat-cards"></div>
+
   <div class="card" id="round-card">
-    <div class="card-title"><i class="ti ti-pencil" aria-hidden="true"></i> Runde <span id="round-num">1</span> eingeben</div>
-    <p style="font-size:13px;color:var(--text2);margin-bottom:8px;">Wer hat als erstes alle Karten aufgedeckt?</p>
-    <select id="finisher-select" style="margin-bottom:14px;"></select>
-    <p style="font-size:13px;color:var(--text2);margin-bottom:8px;">Punkte eingeben:</p>
+    <div class="card-title"><i class="ti ti-pencil" aria-hidden="true"></i> Runde <span id="round-num">1</span></div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:8px">Wer hat als Erstes alle Karten aufgedeckt?</p>
+    <select id="finisher-select" style="margin-bottom:12px"></select>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:8px">Punkte dieser Runde:</p>
     <div id="round-inputs"></div>
-    <button class="full primary" onclick="submitRound()" style="margin-top:14px;">
+    <button class="full primary" onclick="submitRound()" style="margin-top:12px">
       <i class="ti ti-check" aria-hidden="true"></i> Runde bestätigen
     </button>
   </div>
+
   <div class="card">
     <div class="card-title"><i class="ti ti-table" aria-hidden="true"></i> Punktestand</div>
     <div class="table-wrap"><table id="score-table"></table></div>
   </div>
-  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
-    <button class="primary" onclick="endGame()" style="flex:1;"><i class="ti ti-trophy" aria-hidden="true"></i> Spiel beenden</button>
-    <button onclick="resetGame()" class="danger" style="padding:11px 14px;"><i class="ti ti-refresh" aria-hidden="true"></i></button>
+
+  <div style="display:flex;gap:8px;margin-top:4px">
+    <button class="primary" onclick="endGame()" style="flex:1"><i class="ti ti-trophy" aria-hidden="true"></i> Spiel beenden</button>
+    <button onclick="resetGame()" class="danger" style="padding:10px 14px"><i class="ti ti-refresh" aria-hidden="true"></i></button>
   </div>
 </div>
 
+<!-- ═══════════ RESULT ═══════════ -->
 <div id="result-view" class="hidden">
   <div class="hero">
-    <svg width="68" height="76" viewBox="0 0 68 76" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="0" y="10" width="40" height="56" rx="6" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
-      <text x="20" y="42" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="17" font-weight="700" font-family="system-ui">-2</text>
-      <rect x="18" y="4" width="42" height="58" rx="6" fill="rgba(255,255,255,0.95)"/>
-      <rect x="22" y="8" width="34" height="50" rx="4" fill="rgba(93,202,165,0.12)"/>
-      <text x="39" y="38" text-anchor="middle" font-size="26" font-family="system-ui">🏆</text>
+    <svg width="64" height="72" viewBox="0 0 64 72" fill="none" aria-hidden="true">
+      <rect x="0" y="9" width="38" height="54" rx="6" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.35)" stroke-width="1"/>
+      <rect x="17" y="3" width="40" height="56" rx="6" fill="rgba(255,255,255,.95)"/>
+      <rect x="21" y="7" width="32" height="48" rx="4" fill="rgba(93,202,165,.12)"/>
+      <text x="37" y="36" text-anchor="middle" font-size="24" font-family="system-ui">🏆</text>
     </svg>
     <div class="hero-text">
       <h1>Ergebnis</h1>
-      <p id="result-rounds-info"></p>
+      <p id="result-info"></p>
     </div>
   </div>
-  <div id="result-list" style="margin-bottom:16px;"></div>
+  <div id="result-list" style="margin-bottom:14px"></div>
   <button class="full primary" onclick="resetGame()"><i class="ti ti-refresh" aria-hidden="true"></i> Neues Spiel</button>
 </div>
 
 <script>
-const STRIPE_LINK = 'https://buy.stripe.com/DEIN_LINK_HIER';
-const PAYPAL_LINK = 'https://www.paypal.com/nkp/p/DEIN_LINK_HIER';
-const RETURN_URL  = window.location.origin + window.location.pathname;
-const FREE_GAMES  = 5;
+// ── Config ──────────────────────────────────────────────
+const STRIPE_LINK  = 'https://buy.stripe.com/DEIN_LINK_HIER';
+const PAYPAL_LINK  = 'https://www.paypal.com/nkp/p/DEIN_LINK_HIER';
+const RETURN_URL   = window.location.origin + window.location.pathname;
+const MASTER_CODE  = 'marc2026skyjo';
+const FREE_GAMES   = 10;
+
+// ── Paletten ────────────────────────────────────────────
 const COLORS  = ['#5DCAA5','#7F77DD','#D85A30','#378ADD','#EF9F27','#D4537E','#639922','#E24B4A'];
 const TCOLORS = ['#085041','#3C3489','#712B13','#0C447C','#633806','#72243E','#27500A','#791F1F'];
-let players=[],rounds=[],currentRound=1;
 
-function isPaid(){return localStorage.getItem('skyjo_paid')==='true'}
-function getPlayed(){return parseInt(localStorage.getItem('skyjo_games')||'0')}
-function incPlayed(){const n=getPlayed()+1;localStorage.setItem('skyjo_games',n);return n}
-function gamesLeft(){return Math.max(0,FREE_GAMES-getPlayed())}
+// ── State ────────────────────────────────────────────────
+let players = [], rounds = [], currentRound = 1;
+let gameMode = 'classic';   // 'classic' | 'countdown'
+let gameLimit = 100;
+
+// ── Subscription ────────────────────────────────────────
+function isPaid(){ return localStorage.getItem('skyjo_paid')==='true' }
+function getPlayed(){ return parseInt(localStorage.getItem('skyjo_games')||'0') }
+function incPlayed(){ const n=getPlayed()+1; localStorage.setItem('skyjo_games',n); return n }
+function gamesLeft(){ return Math.max(0, FREE_GAMES - getPlayed()) }
 
 function updateBadge(){
-  const b=document.getElementById('games-badge');if(!b)return;
-  if(isPaid()){b.textContent='✓ Premium';b.style.background='rgba(93,202,165,0.3)'}
-  else{const l=gamesLeft();b.textContent=l===1?'1 Spiel noch frei':l+' Spiele noch frei'}
+  const b = document.getElementById('top-badge');
+  if(!b) return;
+  if(isPaid()){ b.textContent='✓ Premium'; b.className='badge premium'; }
+  else{ const l=gamesLeft(); b.textContent=l===1?'1 Spiel noch frei':l+' Spiele noch frei'; b.className='badge'; }
 }
-function checkPaywall(){
-  if(isPaid()||gamesLeft()>0)return true;
-  document.getElementById('paywall-overlay').classList.remove('hidden');return false;
-}
-function payWith(m){
-  const url=m==='stripe'?STRIPE_LINK+'?success_url='+encodeURIComponent(RETURN_URL+'?paid=1'):PAYPAL_LINK+'&return='+encodeURIComponent(RETURN_URL+'?paid=1');
-  window.location.href=url;
-}
-function closePaywall(){document.getElementById('paywall-overlay').classList.add('hidden')}
 
+function checkPaywall(){
+  if(isPaid() || gamesLeft()>0) return true;
+  document.getElementById('pw').classList.remove('hidden');
+  return false;
+}
+function closePw(){ document.getElementById('pw').classList.add('hidden') }
+
+function payWith(m){
+  const url = m==='stripe'
+    ? STRIPE_LINK+'?success_url='+encodeURIComponent(RETURN_URL+'?paid=1')
+    : PAYPAL_LINK+'&return='+encodeURIComponent(RETURN_URL+'?paid=1');
+  window.location.href = url;
+}
+
+function checkCode(){
+  const val = document.getElementById('code-input').value.trim();
+  if(val === MASTER_CODE){
+    localStorage.setItem('skyjo_paid','true');
+    closePw();
+    updateBadge();
+    showToast('Premium aktiviert! Viel Spaß 🎉');
+  } else {
+    showToast('Code nicht korrekt.');
+    document.getElementById('code-input').value='';
+  }
+}
+
+// Check return from payment
 (function(){
-  const p=new URLSearchParams(window.location.search);
-  if(p.get('paid')==='1'){localStorage.setItem('skyjo_paid','true');history.replaceState({},'',window.location.pathname);showToast('Danke! Unbegrenzter Zugang aktiviert 🎉')}
+  const p = new URLSearchParams(window.location.search);
+  if(p.get('paid')==='1'){
+    localStorage.setItem('skyjo_paid','true');
+    history.replaceState({},'',window.location.pathname);
+    showToast('Danke! Premium aktiviert 🎉');
+  }
 })();
 
-function initials(n){return n.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2)}
-function addPlayer(){
-  const inp=document.getElementById('player-name-input');const name=inp.value.trim();
-  if(!name||players.length>=8)return;
-  if(players.some(p=>p.name.toLowerCase()===name.toLowerCase())){showToast('Name bereits vorhanden');return}
-  const i=players.length;players.push({name,color:COLORS[i%COLORS.length],tc:TCOLORS[i%TCOLORS.length]});
-  inp.value='';renderPlayerList();document.getElementById('start-btn').disabled=players.length<2;
+// ── Spielmodus ──────────────────────────────────────────
+function setMode(m){
+  gameMode = m;
+  document.getElementById('mode-classic').classList.toggle('active', m==='classic');
+  document.getElementById('mode-countdown').classList.toggle('active', m==='countdown');
+  document.getElementById('limit-label').textContent = m==='classic' ? 'Spiel endet bei:' : 'Startwert:';
 }
-function removePlayer(i){players.splice(i,1);renderPlayerList();document.getElementById('start-btn').disabled=players.length<2}
+
+let selectedPill = '100';
+function setPill(el, val){
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  selectedPill = val;
+  const crow = document.getElementById('custom-limit-row');
+  if(val==='custom'){ crow.classList.remove('hidden'); }
+  else { crow.classList.add('hidden'); gameLimit=parseInt(val); }
+}
+
+function resolveLimit(){
+  if(selectedPill==='custom'){
+    const v = parseInt(document.getElementById('custom-limit-input').value);
+    if(!v || v<10){ showToast('Bitte gültigen Wert eingeben (min. 10)'); return false; }
+    gameLimit = v;
+  }
+  return true;
+}
+
+// ── Spieler ─────────────────────────────────────────────
+function initials(n){ return n.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2) }
+
+function addPlayer(){
+  const inp = document.getElementById('player-name-input');
+  const name = inp.value.trim();
+  if(!name || players.length>=8) return;
+  if(players.some(p=>p.name.toLowerCase()===name.toLowerCase())){ showToast('Name bereits vorhanden'); return; }
+  const i = players.length;
+  players.push({name, color:COLORS[i%COLORS.length], tc:TCOLORS[i%TCOLORS.length]});
+  inp.value='';
+  renderPlayerList();
+  document.getElementById('start-btn').disabled = players.length<2;
+}
+
+function removePlayer(i){
+  players.splice(i,1);
+  renderPlayerList();
+  document.getElementById('start-btn').disabled = players.length<2;
+}
+
 function renderPlayerList(){
-  document.getElementById('player-list').innerHTML=players.map((p,i)=>`
+  document.getElementById('player-list').innerHTML = players.map((p,i)=>`
     <span class="player-chip">
       <span class="avatar" style="background:${p.color};color:${p.tc}">${initials(p.name)}</span>
       <span class="chip-name">${p.name}</span>
-      <button class="chip-remove" onclick="removePlayer(${i})"><i class="ti ti-x" style="font-size:14px;"></i></button>
+      <button class="chip-rm" onclick="removePlayer(${i})"><i class="ti ti-x" style="font-size:14px"></i></button>
     </span>`).join('');
 }
-function total(i){return rounds.reduce((s,r)=>s+r.scores[i],0)}
+
+// ── Spiellogik ───────────────────────────────────────────
+// raw accumulated score (always adds up from 0)
+function accum(i){ return rounds.reduce((s,r)=>s+r.scores[i], 0) }
+
+// displayed score depending on mode
+function displayScore(i){
+  if(gameMode==='classic') return accum(i);
+  return gameLimit - accum(i);
+}
+
+// check if game should end
+function gameOver(){
+  if(gameMode==='classic') return players.some((_,i)=>accum(i)>=gameLimit);
+  return players.some((_,i)=>displayScore(i)<=0);
+}
+
 function startGame(){
-  if(!checkPaywall())return;
-  rounds=[];currentRound=1;
+  if(!checkPaywall()) return;
+  if(!resolveLimit()) return;
+  rounds=[]; currentRound=1;
   document.getElementById('setup-view').classList.add('hidden');
   document.getElementById('game-view').classList.remove('hidden');
-  renderStatCards();renderFinisherSelect();renderRoundInputs();renderScoreTable();
+  renderStatCards(); renderFinisherSelect(); renderRoundInputs(); renderScoreTable();
 }
+
 function renderStatCards(){
-  const tots=players.map((_,i)=>total(i));const min=Math.min(...tots);
-  document.getElementById('game-round-info').textContent='Runde '+currentRound;
-  document.getElementById('stat-cards').innerHTML=players.map((p,i)=>`
-    <div class="stat-card">
-      <div class="avatar avatar-lg" style="background:${p.color};color:${p.tc};margin:0 auto 6px;">${initials(p.name)}</div>
-      <div class="stat-val" style="color:${tots[i]===min&&rounds.length>0?'var(--success)':'var(--text)'}">${tots[i]}</div>
+  const scores = players.map((_,i)=>displayScore(i));
+  const best = gameMode==='classic' ? Math.min(...scores) : Math.min(...scores);
+  document.getElementById('game-info').textContent =
+    'Runde '+currentRound+(gameMode==='countdown'?' · Countdown':'');
+  document.getElementById('stat-cards').innerHTML = players.map((p,i)=>{
+    const s = scores[i];
+    const isLeading = s===best && rounds.length>0;
+    // progress bar: classic = s/gameLimit, countdown = 1-(s/gameLimit)
+    const pct = gameMode==='classic'
+      ? Math.min(100, Math.round(s/gameLimit*100))
+      : Math.min(100, Math.round((1-(s/gameLimit))*100));
+    const barColor = pct>75 ? '#E24B4A' : pct>40 ? '#EF9F27' : '#5DCAA5';
+    return `<div class="stat-card">
+      <div class="avatar avatar-lg" style="background:${p.color};color:${p.tc};margin:0 auto 5px">${initials(p.name)}</div>
+      <div class="stat-val" style="color:${isLeading?'var(--success)':'var(--text)'}">${s}</div>
       <div class="stat-label">${p.name}</div>
-    </div>`).join('');
+      <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%;background:${barColor}"></div></div>
+    </div>`;
+  }).join('');
 }
+
 function renderFinisherSelect(){
-  document.getElementById('finisher-select').innerHTML=players.map((p,i)=>`<option value="${i}">${p.name}</option>`).join('');
+  document.getElementById('finisher-select').innerHTML =
+    players.map((p,i)=>`<option value="${i}">${p.name}</option>`).join('');
 }
+
 function renderRoundInputs(){
-  document.getElementById('round-num').textContent=currentRound;
-  document.getElementById('round-inputs').innerHTML=players.map((p,i)=>`
+  document.getElementById('round-num').textContent = currentRound;
+  document.getElementById('round-inputs').innerHTML = players.map((p,i)=>`
     <div class="round-input-row">
       <span class="avatar" style="background:${p.color};color:${p.tc}">${initials(p.name)}</span>
-      <span style="flex:1;font-size:14px;">${p.name}</span>
+      <span style="flex:1;font-size:14px">${p.name}</span>
       <input type="number" id="s${i}" value="0" min="-30" max="150"/>
     </div>`).join('');
 }
+
 function submitRound(){
-  const fi=parseInt(document.getElementById('finisher-select').value);
-  const raw=players.map((_,i)=>{const v=parseInt(document.getElementById('s'+i).value);return isNaN(v)?0:v});
-  const otherMin=Math.min(...raw.filter((_,i)=>i!==fi));
-  const doubled=raw[fi]>otherMin;
-  const final=raw.map((s,i)=>(i===fi&&doubled)?s*2:s);
-  rounds.push({scores:final,rawScores:raw,fi,doubled});currentRound++;
-  const tots=players.map((_,i)=>total(i));
-  renderStatCards();renderRoundInputs();renderScoreTable();
-  if(doubled)showToast(players[fi].name+' verdoppelt! ('+raw[fi]+' → '+raw[fi]*2+')');
-  if(tots.some(t=>t>=100)){document.getElementById('round-card').classList.add('hidden');showToast('100 Punkte – Spiel beendet!');setTimeout(endGame,1800)}
+  const fi = parseInt(document.getElementById('finisher-select').value);
+  const raw = players.map((_,i)=>{ const v=parseInt(document.getElementById('s'+i).value); return isNaN(v)?0:v; });
+  const otherMin = Math.min(...raw.filter((_,i)=>i!==fi));
+  const doubled = raw[fi]>otherMin;
+  const final = raw.map((s,i)=>(i===fi&&doubled)?s*2:s);
+  rounds.push({scores:final, rawScores:raw, fi, doubled});
+  currentRound++;
+  renderStatCards(); renderRoundInputs(); renderScoreTable();
+  if(doubled) showToast(players[fi].name+' verdoppelt! ('+raw[fi]+' → '+raw[fi]*2+')');
+  if(gameOver()){
+    document.getElementById('round-card').classList.add('hidden');
+    showToast(gameMode==='classic'?'Limit erreicht – Spiel beendet!':'Jemand hat 0 erreicht – Spiel beendet!');
+    setTimeout(endGame,1800);
+  }
 }
+
 function renderScoreTable(){
-  const tots=players.map((_,i)=>total(i));const min=Math.min(...tots);
-  let html='<thead><tr><th>Rd.</th>'+players.map(p=>'<th>'+p.name+'</th>').join('')+'</tr></thead><tbody>';
+  const scores = players.map((_,i)=>displayScore(i));
+  const best = Math.min(...scores);
+  const modeLabel = gameMode==='countdown' ? 'Verbleibend' : 'Gesamt';
+  let html='<thead><tr><th>Rd.</th>'+players.map(p=>`<th>${p.name}</th>`).join('')+'</tr></thead><tbody>';
   rounds.forEach((r,ri)=>{
-    html+='<tr><td style="color:var(--text2);font-size:12px;">'+(ri+1)+'</td>';
-    html+=players.map((_,i)=>'<td class="'+(i===r.fi&&r.doubled?'doubled':'')+'">'+r.scores[i]+(i===r.fi&&r.doubled?' ×2':'')+'</td>').join('');
+    html+='<tr><td style="color:var(--text2);font-size:11px">'+(ri+1)+'</td>';
+    html+=players.map((_,i)=>`<td class="${i===r.fi&&r.doubled?'doubled':''}">${r.scores[i]}${i===r.fi&&r.doubled?' ×2':''}</td>`).join('');
     html+='</tr>';
   });
   if(rounds.length>0){
-    html+='<tr class="total-row"><td style="color:var(--text2);font-size:12px;">∑</td>';
-    html+=players.map((_,i)=>'<td class="'+(tots[i]===min?'winning':'')+'">'+tots[i]+'</td>').join('');
+    html+=`<tr class="total-row"><td style="color:var(--text2);font-size:11px">${modeLabel}</td>`;
+    html+=players.map((_,i)=>`<td class="${scores[i]===best?'winning':''}">${scores[i]}</td>`).join('');
     html+='</tr>';
   }
-  html+='</tbody>';document.getElementById('score-table').innerHTML=html;
+  html+='</tbody>';
+  document.getElementById('score-table').innerHTML=html;
 }
+
 function endGame(){
   incPlayed();
-  const sorted=players.map((p,i)=>({...p,total:total(i)})).sort((a,b)=>a.total-b.total);
+  const scores = players.map((_,i)=>displayScore(i));
+  const sorted = players.map((p,i)=>({...p, score:scores[i]})).sort((a,b)=>a.score-b.score);
   document.getElementById('game-view').classList.add('hidden');
   document.getElementById('result-view').classList.remove('hidden');
-  document.getElementById('result-rounds-info').textContent=rounds.length+' Runden gespielt';
+  document.getElementById('result-info').textContent =
+    rounds.length+' Runden · '+(gameMode==='countdown'?'Countdown':'Classic');
   const medals=['🥇','🥈','🥉'];
-  document.getElementById('result-list').innerHTML=sorted.map((p,rank)=>`
+  const scoreLabel = gameMode==='countdown' ? 'Punkte übrig' : 'Punkte';
+  document.getElementById('result-list').innerHTML = sorted.map((p,rank)=>`
     <div class="card" style="display:flex;align-items:center;gap:12px;${rank===0?'border:2px solid var(--success);':''}">
       <span class="result-rank">${medals[rank]||rank+1+'.'}</span>
       <span class="avatar avatar-lg" style="background:${p.color};color:${p.tc}">${initials(p.name)}</span>
       <span style="flex:1;font-weight:${rank===0?'600':'400'}">${p.name}</span>
-      <span style="font-size:20px;font-weight:600;color:${rank===0?'var(--success)':'var(--text)'}">${p.total}</span>
+      <div style="text-align:right">
+        <div style="font-size:18px;font-weight:600;color:${rank===0?'var(--success)':'var(--text)'}">${p.score}</div>
+        <div style="font-size:10px;color:var(--text2)">${scoreLabel}</div>
+      </div>
     </div>`).join('');
   updateBadge();
 }
+
 function resetGame(){
-  players=[];rounds=[];currentRound=1;
+  players=[]; rounds=[]; currentRound=1;
   document.getElementById('setup-view').classList.remove('hidden');
   document.getElementById('game-view').classList.add('hidden');
   document.getElementById('result-view').classList.add('hidden');
@@ -310,8 +515,15 @@ function resetGame(){
   document.getElementById('start-btn').disabled=true;
   updateBadge();
 }
-function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
-document.getElementById('player-name-input').addEventListener('keydown',e=>{if(e.key==='Enter')addPlayer()});
+
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+document.getElementById('player-name-input').addEventListener('keydown',e=>{ if(e.key==='Enter') addPlayer() });
+document.getElementById('code-input').addEventListener('keydown',e=>{ if(e.key==='Enter') checkCode() });
 updateBadge();
 </script>
 </body>
